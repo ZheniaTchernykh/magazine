@@ -1,0 +1,111 @@
+﻿@using Shop.Models
+
+@{ ViewBag.Title = "Товары"; }
+
+<h2>Список товаров</h2>
+
+        <div>
+            @Html.ActionLink("Корзина", "Cart", "Cart")
+        </div>
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Название</th>
+                    <th>Артикул</th>
+                    <th>Описание</th>
+                    <th>Цена</th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>
+                        Товар 1
+                    </td>
+                    <td>
+                        12345
+                    </td>
+                    <td>
+                        -
+                    </td>
+                    <td>
+                        100 руб
+                    </td>
+                    <td>
+                        <div>
+                            <div>
+                                @Html.ActionLink("+", "AddToCart", "Cart", null, new { title = "Добавить в корзину" })
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Товар 2
+                    </td>
+                    <td>
+                        54321
+                    </td>
+                    <td>
+                        -
+                    </td>
+                    <td>
+                        100 руб
+                    </td>
+                    <td>
+                        <div>
+                            <div>
+                                @Html.ActionLink("+", "AddToCart", "Cart", null, new { title = "Добавить в корзину" })
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Товар 3
+                    </td>
+                    <td>
+                        5555
+                    </td>
+                    <td>
+                        -
+                    </td>
+                    <td>
+                        1000 руб
+                    </td>
+                    <td>
+                        <div>
+                            <div>
+                                @Html.ActionLink("+", "AddToCart", "Cart", null, new { title = "Добавить в корзину" })
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Товар 4
+                    </td>
+                    <td>
+                        228
+                    </td>
+                    <td>
+                        -
+                    </td>
+                    <td>
+                        3500 руб
+                    </td>
+                    <td>
+                        <div>
+                            <div>
+                                @Html.ActionLink("+", "AddToCart", "Cart", null, new { title = "Добавить в корзину" })
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div>
+            @Html.ActionLink("Назад", "Account", "Home")
+        </div>

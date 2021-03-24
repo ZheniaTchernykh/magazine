@@ -1,0 +1,46 @@
+﻿@model Shop.Models.EditModel
+
+@{ ViewBag.Title = "Редактирование профиля"; }
+
+<h2>Редактирование профиля</h2>
+
+@using (Html.BeginForm())
+{
+@Html.AntiForgeryToken()
+
+                <div>
+                    <hr />
+                    @Html.ValidationSummary(true, "")
+                    <div>
+                        @Html.LabelFor(model => model.LastName, "Фамилия")
+                        <div>
+                            @Html.EditorFor(model => model.LastName)
+                            @Html.ValidationMessageFor(model => model.LastName, "")
+                        </div>
+                    </div>
+
+                    <div>
+                        @Html.LabelFor(model => model.FirstName, "Имя")
+                        <div>
+                            @Html.EditorFor(model => model.FirstName)
+                            @Html.ValidationMessageFor(model => model.FirstName, "")
+                        </div>
+                    </div>
+
+                    <div>
+                        @Html.LabelFor(model => model.MiddleName, "Отчество")
+                        <div>
+                            @Html.EditorFor(model => model.MiddleName)
+                            @Html.ValidationMessageFor(model => model.MiddleName, "")
+                        </div>
+                    </div>
+
+                    <div>
+                        <div>
+                            <input type="submit" value="Сохранить" />
+                        </div>
+                        <div>
+                            @Html.ActionLink("Назад", "Account", "Home")
+                        </div>
+                    </div>
+                </div>}

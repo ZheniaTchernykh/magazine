@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Delete";
+}
+
+<form method="post">
+    <h2>Вы уверены, что хотите удалить свой аккаунт?</h2>
+    <div>
+        <p><input type="submit" value="Да" /></p>
+        <div>
+            @Html.ActionLink("Назад", "Account", "Home")
+        </div>
+    </div>
+</form>

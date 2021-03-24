@@ -1,0 +1,69 @@
+﻿@model Shop.Models.RegisterModel
+
+@{ ViewBag.Title = "Регистрация"; }
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Register", "Account", FormMethod.Post))
+{
+@Html.AntiForgeryToken()
+<h4>Создание новой учетной записи</h4>
+    @Html.ValidationSummary(true, "")
+<div>
+    @Html.LabelFor(m => m.Email, "Email")
+    <div>
+        @Html.TextBoxFor(m => m.Email)
+        @Html.ValidationMessageFor(model => model.Email)
+    </div>
+</div>
+<div>
+    @Html.LabelFor(m => m.Password, "Пароль")
+    <div>
+        @Html.PasswordFor(m => m.Password)
+        @Html.ValidationMessageFor(model => model.Password)
+    </div>
+</div>
+<div>
+    @Html.LabelFor(m => m.ConfirmPassword, "Подтвердите пароль")
+    <div>
+        @Html.PasswordFor(m => m.ConfirmPassword)
+        @Html.ValidationMessageFor(model => model.ConfirmPassword)
+    </div>
+</div>
+<div>
+    @Html.LabelFor(m => m.LastName, "Фамилия")
+    <div>
+        @Html.TextBoxFor(m => m.LastName)
+        @Html.ValidationMessageFor(model => model.LastName)
+    </div>
+</div>
+<div>
+    @Html.LabelFor(m => m.FirstName, "Имя")
+    <div>
+        @Html.TextBoxFor(m => m.FirstName, "")
+        @Html.ValidationMessageFor(model => model.FirstName)
+    </div>
+</div>
+<div>
+    @Html.LabelFor(m => m.MiddleName, "Отчество")
+    <div>
+        @Html.TextBoxFor(m => m.MiddleName)
+        @Html.ValidationMessageFor(model => model.MiddleName)
+    </div>
+</div>
+@Html.CheckBox("check", false)
+<label for="check">Я подтверждаю согласие на обработку персональных данных в соотвествии с федеральным законом <a href="http://www.consultant.ru/cons/cgi/online.cgi?req=doc&base=LAW&n=286959&fld=134&dst=1000000001,0&rnd=0.21050761970264387#019597009181987213">№152-ФЗ «О персональных данных»</a></label>
+<div>
+    <div>
+        <input type="submit" value="Зарегистрироваться" />
+    </div>
+    <div>
+        @Html.ActionLink("Уже есть аккаунт?", "Login", "Account")
+    </div>
+</div>}
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

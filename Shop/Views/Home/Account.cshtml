@@ -1,0 +1,15 @@
+﻿@{ ViewBag.Title = "Личный кабинет"; }
+
+<h2>Личный кабинет</h2>
+
+
+<div>@Html.ActionLink("Редактировать профиль", "Edit", "Account")</div>
+<div>@Html.ActionLink("Магазин", "Shop", "Home")</div>
+<div>
+    @Html.ActionLink("Выйти", "Logout", "Account")
+</div>
+<br />
+<br />
+<div>
+    @Html.ActionLink("Удалить аккаунт", "Delete", "Account")
+</div>

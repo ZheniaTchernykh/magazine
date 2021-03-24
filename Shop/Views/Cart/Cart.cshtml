@@ -1,0 +1,77 @@
+﻿@using Shop.Models
+
+@{ ViewBag.Title = "Корзина"; }
+
+<h2>Список товаров</h2>
+
+        <div>
+            @Html.ActionLink("Оформить заказ", "MakeOrder", "Cart")
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Название</th>
+                    <th>Кол-во</th>
+                    <th>Цена</th>
+                    <th>Общая цена</th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>
+                        1
+                    </td>
+                    <td>
+                        Товар 1
+                    </td>
+                    <td>
+                        100 руб
+                    </td>
+                    <td>
+                        100 руб
+                    </td>
+                    <td>
+                        <div>
+                            <div>
+                                @Html.ActionLink("-", "RemoveFromCart", "Cart", null, new { title = "Убрать из корзины" })
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        2
+                    </td>
+                    <td>
+                        Товар 2
+                    </td>
+                    <td>
+                        100 руб
+                    </td>
+                    <td>
+                        200 руб
+                    </td>
+                    <td>
+                        <div>
+                            <div>
+                                @Html.ActionLink("-", "RemoveFromCart", "Cart", null, new { title = "Убрать из корзины" })
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4">Итого:</td>
+                    <td>
+                        300 руб
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+
+<div>
+    @Html.ActionLink("Назад", "Shop", "Home")
+</div>

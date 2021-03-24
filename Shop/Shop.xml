@@ -1,0 +1,385 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Shop</name>
+    </assembly>
+    <members>
+        <member name="T:Shop.BundleConfig">
+            <summary>
+            Бандлы
+            </summary>
+        </member>
+        <member name="M:Shop.BundleConfig.RegisterBundles(System.Web.Optimization.BundleCollection)">
+            <summary>
+            Регистрация бандлов
+            </summary>
+            <param name="bundles"></param>
+        </member>
+        <member name="T:Shop.FilterConfig">
+            <summary>
+            Фильтры
+            </summary>
+        </member>
+        <member name="M:Shop.FilterConfig.RegisterGlobalFilters(System.Web.Mvc.GlobalFilterCollection)">
+            <summary>
+            Регистрация фильтров
+            </summary>
+            <param name="filters"></param>
+        </member>
+        <member name="T:Shop.RouteConfig">
+            <summary>
+            Конфиг роутов
+            </summary>
+        </member>
+        <member name="M:Shop.RouteConfig.RegisterRoutes(System.Web.Routing.RouteCollection)">
+            <summary>
+            Регистрация роутов
+            </summary>
+            <param name="routes"></param>
+        </member>
+        <member name="T:Shop.Controllers.AccountController">
+            <summary>
+            Контроллер для работы с аккаунтом
+            </summary>
+        </member>
+        <member name="M:Shop.Controllers.AccountController.Register">
+            <summary>
+            GET метод регистрации
+            </summary>
+            <returns>Представление для регистрации если пользователь не авторизован, иначе перенаправляет на страницу аккаунта</returns>
+        </member>
+        <member name="M:Shop.Controllers.AccountController.Register(Shop.Models.RegisterModel,System.Boolean)">
+            <summary>
+            POST метод авторизации
+            </summary>
+            <param name="model">Модель регистрации</param>
+            <param name="check">Соглашение на обработку персональных данных</param>
+            <returns>Если регистрация прошла успешно, то перенаправляет на страницу авторизации, иначе возвращает представление регистрации с указанием ошибок</returns>
+        </member>
+        <member name="M:Shop.Controllers.AccountController.Login">
+            <summary>
+            GET метод авторизации
+            </summary>
+            <returns>Страница аккаунта, если авторизация пройдена, иначе страница авторизации с текстом ошибок</returns>
+        </member>
+        <member name="M:Shop.Controllers.AccountController.Login(Shop.Models.LoginModel)">
+            <summary>
+            POST метод авторизации
+            </summary>
+            <param name="model">Модель авторизации</param>
+            <returns>Страница аккаунта, если авторизация прошла, иначе страница авторизации с текстом ошибок</returns>
+        </member>
+        <member name="M:Shop.Controllers.AccountController.Logout">
+            <summary>
+            Деавторизация
+            </summary>
+            <returns>Главная страница сайта</returns>
+        </member>
+        <member name="M:Shop.Controllers.AccountController.Edit">
+            <summary>
+            GET метод редактирования аккаунта
+            </summary>
+            <returns>Страница редактирования аккаунта, если пользователь авторизован, иначе страница авторизации</returns>
+        </member>
+        <member name="M:Shop.Controllers.AccountController.Edit(Shop.Models.EditModel)">
+            <summary>
+            POST метод редактирования аккаунта
+            </summary>
+            <param name="model">Модель редактирования аккаунта</param>
+            <returns>Страницу аккаунта, если успешно, иначе текст ошибок</returns>
+        </member>
+        <member name="M:Shop.Controllers.AccountController.Delete">
+            <summary>
+            GET метод удаления аккаунта
+            </summary>
+            <returns>Страница подтверждения удаления аккаунта</returns>
+        </member>
+        <member name="M:Shop.Controllers.AccountController.DeleteConfirmed">
+            <summary>
+            POST метод удаления аккаунта
+            </summary>
+            <returns>Главная страница, если успешно, иначе страница аккаунта</returns>
+        </member>
+        <member name="T:Shop.Controllers.CartController">
+            <summary>
+            Контроллер для работы с корзиной
+            </summary>
+        </member>
+        <member name="M:Shop.Controllers.CartController.AddToCart">
+            <summary>
+            Добавление в корзину
+            </summary>
+            <returns>Страница каталога</returns>
+        </member>
+        <member name="M:Shop.Controllers.CartController.RemoveFromCart">
+            <summary>
+            Удаление продукта из корзины
+            </summary>
+            <returns>Страница корзины</returns>
+        </member>
+        <member name="M:Shop.Controllers.CartController.Cart">
+            <summary>
+            Отображение страницы корзины
+            </summary>
+            <returns>Страница корзины</returns>
+        </member>
+        <member name="M:Shop.Controllers.CartController.MakeOrder">
+            <summary>
+            GET метод оформления заказа
+            </summary>
+            <returns>Страница оформления заказа</returns>
+        </member>
+        <member name="M:Shop.Controllers.CartController.MakeOrder(Shop.Models.OrderModel)">
+            <summary>
+            POST метод оформления заказа
+            </summary>
+            <param name="model">Модель оформления заказа</param>
+            <returns>Запись в БД и переадресация на страницу завершения оформления заказа, если нет ошибок, иначе текст ошибок</returns>
+        </member>
+        <member name="M:Shop.Controllers.CartController.EndOrder">
+            <summary>
+            Страница успешного оформления заказа
+            </summary>
+            <returns>Представление</returns>
+        </member>
+        <member name="T:Shop.Controllers.HomeController">
+            <summary>
+            Контроллер для работы с главными страницами сайта
+            </summary>
+        </member>
+        <member name="M:Shop.Controllers.HomeController.Index">
+            <summary>
+            Главная страница
+            </summary>
+            <returns>Представление</returns>
+        </member>
+        <member name="M:Shop.Controllers.HomeController.Account">
+            <summary>
+            Страница аккаунта
+            </summary>
+            <returns>Представление</returns>
+        </member>
+        <member name="M:Shop.Controllers.HomeController.Shop">
+            <summary>
+            Страница каталога товаров
+            </summary>
+            <returns>Представление</returns>
+        </member>
+        <member name="T:Shop.MvcApplication">
+            <summary>
+            Старт приложения
+            </summary>
+        </member>
+        <member name="M:Shop.MvcApplication.Application_Start">
+            <summary>
+            Запуск
+            </summary>
+        </member>
+        <member name="T:Shop.Models.ApplicationUser">
+            <summary>
+            Класс пользователя ASP.NET Identity
+            </summary>
+        </member>
+        <member name="P:Shop.Models.ApplicationUser.FirstName">
+            <summary>
+            Фамилия
+            </summary>
+        </member>
+        <member name="P:Shop.Models.ApplicationUser.LastName">
+            <summary>
+            Имя
+            </summary>
+        </member>
+        <member name="P:Shop.Models.ApplicationUser.MiddleName">
+            <summary>
+            Отчество
+            </summary>
+        </member>
+        <member name="P:Shop.Models.ApplicationUser.Orders">
+            <summary>
+            Заказы
+            </summary>
+        </member>
+        <member name="M:Shop.Models.ApplicationUser.#ctor">
+            <summary>
+            Конструктор класса ApplicationUser
+            </summary>
+        </member>
+        <member name="T:Shop.Models.ApplicationContext">
+            <summary>
+            Контекст
+            </summary>
+        </member>
+        <member name="P:Shop.Models.ApplicationContext.Orders">
+            <summary>
+            Контекст данных для сущности заказа
+            </summary>
+        </member>
+        <member name="M:Shop.Models.ApplicationContext.#ctor">
+            <summary>
+            Контекст
+            </summary>
+        </member>
+        <member name="M:Shop.Models.ApplicationContext.Create">
+            <summary>
+            Создание контекста
+            </summary>
+            <returns>Контекст</returns>
+        </member>
+        <member name="T:Shop.Models.ApplicationUserManager">
+            <summary>
+            Менеджер аккаунта
+            </summary>
+        </member>
+        <member name="M:Shop.Models.ApplicationUserManager.#ctor(Microsoft.AspNet.Identity.IUserStore{Shop.Models.ApplicationUser})">
+            <summary>
+            Метод ASP.NET Identity
+            </summary>
+            <param name="store">API UserManager'а</param>
+        </member>
+        <member name="M:Shop.Models.ApplicationUserManager.Create(Microsoft.AspNet.Identity.Owin.IdentityFactoryOptions{Shop.Models.ApplicationUserManager},Microsoft.Owin.IOwinContext)">
+            <summary>
+            Создание менеджера аккаунта
+            </summary>
+            <param name="options">Настройки конфигурации</param>
+            <param name="context">контекст</param>
+            <returns></returns>
+        </member>
+        <member name="T:Shop.Models.LoginModel">
+            <summary>
+            Модель авторизации
+            </summary>
+        </member>
+        <member name="P:Shop.Models.LoginModel.Email">
+            <summary>
+            Email
+            </summary>
+        </member>
+        <member name="P:Shop.Models.LoginModel.Password">
+            <summary>
+            Пароль
+            </summary>
+        </member>
+        <member name="T:Shop.Models.RegisterModel">
+            <summary>
+            Модель регистрации
+            </summary>
+        </member>
+        <member name="P:Shop.Models.RegisterModel.Email">
+            <summary>
+            Email
+            </summary>
+        </member>
+        <member name="P:Shop.Models.RegisterModel.Password">
+            <summary>
+            Пароль
+            </summary>
+        </member>
+        <member name="P:Shop.Models.RegisterModel.ConfirmPassword">
+            <summary>
+            Подтверждение пароля
+            </summary>
+        </member>
+        <member name="P:Shop.Models.RegisterModel.FirstName">
+            <summary>
+            Имя
+            </summary>
+        </member>
+        <member name="P:Shop.Models.RegisterModel.LastName">
+            <summary>
+            Фамилия
+            </summary>
+        </member>
+        <member name="P:Shop.Models.RegisterModel.MiddleName">
+            <summary>
+            Отчество
+            </summary>
+        </member>
+        <member name="T:Shop.Models.EditModel">
+            <summary>
+            Модель редактирования аккаунта
+            </summary>
+        </member>
+        <member name="P:Shop.Models.EditModel.FirstName">
+            <summary>
+            Имя
+            </summary>
+        </member>
+        <member name="P:Shop.Models.EditModel.LastName">
+            <summary>
+            Фамилия
+            </summary>
+        </member>
+        <member name="P:Shop.Models.EditModel.MiddleName">
+            <summary>
+            Отчество
+            </summary>
+        </member>
+        <member name="T:Shop.Models.OrderModel">
+            <summary>
+            Модель оформления заказа
+            </summary>
+        </member>
+        <member name="P:Shop.Models.OrderModel.UserPhone">
+            <summary>
+            Номер телефона
+            </summary>
+        </member>
+        <member name="P:Shop.Models.OrderModel.UserComment">
+            <summary>
+            Комментарий пользователя
+            </summary>
+        </member>
+        <member name="T:Shop.Models.Order">
+            <summary>
+            Класс заказа
+            </summary>
+        </member>
+        <member name="P:Shop.Models.Order.Id">
+            <summary>
+            Айди заказа
+            </summary>
+        </member>
+        <member name="P:Shop.Models.Order.UserPhone">
+            <summary>
+            Номер телефона пользователя
+            </summary>
+        </member>
+        <member name="P:Shop.Models.Order.UserComment">
+            <summary>
+            Комментарий пользователя
+            </summary>
+        </member>
+        <member name="P:Shop.Models.Order.Date">
+            <summary>
+            Дата оформления заказа
+            </summary>
+        </member>
+        <member name="P:Shop.Models.Order.UserId">
+            <summary>
+            Айди пользователя
+            </summary>
+        </member>
+        <member name="P:Shop.Models.Order.User">
+            <summary>
+            Пользователь
+            </summary>
+        </member>
+        <member name="P:Shop.Models.Order.OrderedProducts">
+            <summary>
+            Заказанные товары
+            </summary>
+        </member>
+        <member name="T:AspNetIdentityApp.Startup">
+            <summary>
+            Запуск приложения
+            </summary>
+        </member>
+        <member name="M:AspNetIdentityApp.Startup.Configuration(Owin.IAppBuilder)">
+            <summary>
+            Конфигурация
+            </summary>
+            <param name="app">Owin app builder</param>
+        </member>
+    </members>
+</doc>

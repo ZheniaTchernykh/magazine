@@ -1,0 +1,37 @@
+﻿@model Shop.Models.OrderModel
+
+@{ ViewBag.Title = "Оформление заказа"; }
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("MakeOrder", "Cart", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+@Html.AntiForgeryToken()
+<h4>Оформление заказа</h4>
+<div>
+    Для оформления заказа заполните форму. Наш менеджер свяжется с вами.
+    </div>
+    @Html.ValidationSummary(true, "")
+    <div>
+        @Html.LabelFor(m => m.UserPhone, "Номер телефона")
+        <div>
+            @Html.TextBoxFor(m => m.UserPhone)
+            @Html.ValidationMessageFor(model => model.UserPhone)
+        </div>
+    </div>
+    <div>
+        @Html.LabelFor(m => m.UserComment, "Комментарий к заказу")
+        <div>
+            @Html.TextAreaFor(m => m.UserComment)
+            @Html.ValidationMessageFor(model => model.UserComment)
+        </div>
+    </div>
+    <div>
+        <div>
+            <input type="submit" value="Оформить заказ" class="submit" />
+        </div>
+        <div>
+            @Html.ActionLink("Назад", "Cart", "Cart")
+        </div>
+    </div>
+    }

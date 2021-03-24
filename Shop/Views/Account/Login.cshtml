@@ -1,0 +1,43 @@
+﻿@model Shop.Models.LoginModel
+
+@{ ViewBag.Title = "Авторизация"; }
+
+<h2>Авторизация</h2>
+
+
+@using (Html.BeginForm())
+{
+@Html.AntiForgeryToken()
+
+                <div>
+                    <hr />
+                    @Html.ValidationSummary(true, "")
+                    <div>
+                        @Html.LabelFor(model => model.Email, "Логин")
+                        <div>
+                            @Html.EditorFor(model => model.Email)
+                            @Html.ValidationMessageFor(model => model.Email, "")
+                        </div>
+                    </div>
+
+                    <div>
+                        @Html.LabelFor(model => model.Password, "Пароль")
+                        <div>
+                            @Html.EditorFor(model => model.Password)
+                            @Html.ValidationMessageFor(model => model.Password, "")
+                        </div>
+                    </div>
+
+                    <div>
+                        <div>
+                            <input type="submit" value="Войти" />
+                        </div>
+                        <div>
+                            @Html.ActionLink("Зарегистрироваться", "Register", "Account")
+                        </div>
+                    </div>
+                </div>}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
